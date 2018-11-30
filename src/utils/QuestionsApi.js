@@ -70,15 +70,3 @@ let decksQuestions = {
         AsyncStorage.setItem(DECKS_STORAGE_KEY, JSON.stringify(decksQuestions));
         return decksQuestions;
     }
-
-    export function removeDeck(title) {
-        return AsyncStorage.getItem(DECKS_STORAGE_KEY).then(results => {
-          const decks = JSON.parse(results);
-          decks[title] = undefined;
-          delete decks[title];
-      
-          AsyncStorage.setItem(DECKS_STORAGE_KEY, JSON.stringify(decks)).then(() => {
-            return decks;
-          });
-        });
-      }

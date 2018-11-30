@@ -17,8 +17,3 @@ export const addQuestion = params => ({
     type: ADD_QUESTION,
     params,
 });
-
-export const removeDeck =title=> ({
-      type: REMOVE_DECK,
-      title
-  });
