@@ -26,6 +26,19 @@ class ListScreen extends React.Component {
         </TouchableOpacity>
     </View>
 );
+  
+  render() {
+    return (
+       <View style={styles.deck}>
+          <FlatList
+              data={Object.values(this.props.decks).sort((a, b) => a.title > b.title)}
+              renderItem={this.renderItem}
+              keyExtractor={ (item, index) => index.toString() }
+              />
+      </View>
+      
+  );
+  }
 }
   
 function mapStateToProps(state) {
